@@ -32,9 +32,9 @@
 html, body {
   overflow: auto;
   font-family: 'Poppins', sans-serif;
-  cursor: none !important;
+  /* cursor: none !important; */
 } 
 
-a, button, .cursor-pointer {
+/* a, button, .cursor-pointer {
   cursor: none !important;
-}
+} */
