@@ -6,6 +6,7 @@ import { CodeXml, FolderCode, HomeIcon, Medal, User } from "lucide-react";
 import ThemeToggle from "./components/ThemeToggle";
 import Dock from "./components/Dock/Dock";
 import ScrollBar from "./components/ScrollBar";
+import CustomCursor from "./components/CustomCursor";
 // import CustomCursor from "./components/CustomCursor";
 
 const App = () => {
@@ -85,7 +86,7 @@ const App = () => {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            {/* <CustomCursor /> */}
+            <CustomCursor />
             <ScrollBar />
             <Home />
             <ThemeToggle />
@@ -98,7 +99,7 @@ const App = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 50 }}
                   transition={{ duration: 0.3 }}
-                  className="fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50"
+                  className="fixed bottom-4 left-0 right-0 flex justify-center w-full px-4 z-50 transform -translate-x-1/2"
                 >
                   <Dock items={items} panelHeight={68} baseItemSize={50} magnification={70} />
                 </motion.div>

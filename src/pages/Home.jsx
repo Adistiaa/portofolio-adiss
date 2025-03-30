@@ -214,6 +214,7 @@ function Home() {
   const projectRef = useRef(null);
   const certificatesRef = useRef(null);
   const contactRef = useRef(null);
+  const footerRef = useRef(null);
 
   // track ref section
   const isContainerInView = useInView(containerRef, {
@@ -234,6 +235,7 @@ function Home() {
     amount: 0.1,
   });
   const isContactInView = useInView(contactRef, { once: false, amount: 0.1 });
+  const isFooterInView = useInView(footerRef, { once: false, amount: 0.1 });
 
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -252,7 +254,7 @@ function Home() {
   };
 
   return (
-    <div id="profile" className="min-h-screen flex items-center justify-center py-20 bg-gray-50/50 dark:bg-gray-900 py-15 px-4 sm:px-6 lg:px-8">
+    <div id="profile" className="min-h-screen flex items-center justify-center py-20 bg-gray-100 dark:bg-gray-900 py-15 px-4 sm:px-6 lg:px-8">
       <div ref={containerRef} className="w-full max-w-2xl mx-auto">
         {/* Container Utama */}
         <motion.div
@@ -463,7 +465,7 @@ function Home() {
               {[
                 {
                   title: "Programming Languages",
-                  skills: ["JavaScript", "PHP", "Python", "C++"],
+                  skills: ["JavaScript", "PHP", "Python", "C++", "TypeScript"],
                   icon: <CodeXml size={20} />,
                 },
                 {
@@ -475,17 +477,18 @@ function Home() {
                     "Bootstrap",
                     "MySQL",
                     "Vite.js",
+                    "Next.js",
                   ],
                   icon: <Terminal size={20} />,
                 },
                 {
                   title: "Tools",
-                  skills: ["VS Code", "Git", "Figma", "Postman"],
+                  skills: ["VS Code", "Git", "Figma", "Xampp", "Godot", "Postman"],
                   icon: <Laptop size={20} />,
                 },
                 {
                   title: "Languages",
-                  skills: ["English (Pemula)", "Indonesia"],
+                  skills: ["English (Beginner)", "Indonesia"],
                   icon: <Languages size={20} />,
                 },
               ].map((category, index) => (
@@ -939,15 +942,15 @@ function Home() {
 
           {/* Footer */}
           <motion.section
-            ref={contactRef}
+            ref={footerRef}
             initial={{ opacity: 0, y: 20 }}
-            animate={isContactInView ? { opacity: 1, y: 0 } : {}}
+            animate={isFooterInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
             <div className="text-center mb-12">
               <motion.footer className="py-6 text-center">
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  &copy;{new Date().getFullYear()} Portofolio Adiss made with❤️.
+                  &copy;{new Date().getFullYear()} Portofolio Adiss made with ❤️.
                   All rights reserved.
                 </p>
               </motion.footer>
