@@ -7,7 +7,6 @@ import ThemeToggle from "./components/ThemeToggle";
 import Dock from "./components/Dock/Dock";
 import ScrollBar from "./components/ScrollBar";
 import CustomCursor from "./components/CustomCursor";
-// import CustomCursor from "./components/CustomCursor";
 
 const App = () => {
   const items = [
@@ -76,7 +75,7 @@ const App = () => {
             transition={{ duration: 0.5 }}
             className="fixed inset-0 z-50 flex items-center justify-center"
           >
-            <Loading />
+          <Loading />
           </motion.div>
         ) : (
           <motion.div

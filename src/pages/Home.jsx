@@ -20,6 +20,8 @@ import {
 import { motion, useInView } from "framer-motion";
 import Divider from "../components/Divider";
 import TypingText from "../components/TypingText";
+import Lanyard from "../components/Lanyard/Lanyard";
+
 
 function Home() {
   const socialLinks = [
@@ -253,8 +255,13 @@ function Home() {
     },
   };
 
-  return (
-    <div id="profile" className="min-h-screen flex items-center justify-center py-20 bg-gray-100 dark:bg-gray-900 py-15 px-4 sm:px-6 lg:px-8">
+  return (  
+    <>
+    <div className="hidden md:block absolute right-0 top-0  h-screen lg:w-[350px] w-full">
+      {/* border-2 border-red-500 Debug Lanyard */}
+    <Lanyard position={[0, 0, 12]} gravity={[0, -40, 0]} />
+    </div>
+    <div id="profile" className="min-h-screen flex items-center justify-center py-20 bg-gray-100 dark:bg-gray-900 py-15 px-4 sm:px-6 lg:px-8 z-20">
       <div ref={containerRef} className="w-full max-w-2xl mx-auto">
         {/* Container Utama */}
         <motion.div
@@ -335,9 +342,9 @@ function Home() {
                 className="absolute inset-0 rounded-full pointer-events-none"
               ></motion.div>
 
-              {/* Profile Image Container */}
+              {/* Profile Image */}
               <div className="relative w-full h-full rounded-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 overflow-hidden border border-gray-200 dark:border-gray-600 shadow-sm z-10">
-                {/* Replace with your actual image */}
+                {/* image */}
                 <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-500">
                   <img
                     src="https://res.cloudinary.com/dxbkwpm3i/image/upload/v1743302996/WhatsApp_Image_2025-03-02_at_16.35.11_f8a5e4ec_qpobrr.jpg"
@@ -397,7 +404,8 @@ function Home() {
             </motion.div>
           </motion.div>
 
-          <span id="about"><Divider  /></span>
+          <span id="about"><Divider  />
+          </span>
 
           {/* About Section */}
           <motion.section
@@ -452,7 +460,7 @@ function Home() {
               transition={{ delay: 0.2 }}
               className="text-xl font-medium text-gray-800 dark:text-white mb-5 pb-2 border-b border-gray-100 dark:border-gray-700"
             >
-              Skill
+              Skills
             </motion.h3>
 
             {/* Skill Grid */}
@@ -959,6 +967,7 @@ function Home() {
         </motion.div>
       </div>
     </div>
+    </>
   );
 }
 

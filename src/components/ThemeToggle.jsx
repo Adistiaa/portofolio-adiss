@@ -9,11 +9,11 @@ export default function ThemeToggle() {
 
   const handleToggle = () => {
     if (isAutoMode) {
-      // If in auto mode, first click turns it off and sets manual mode
+      // Jika dalam mode otomatis, klik pertama untuk mematikannya dan mengatur mode manual
       setAutoMode(false);
-      toggleDarkMode(); // Toggle to opposite of system preference
+      toggleDarkMode(); // Beralih ke kebalikan dari preferensi sistem
     } else {
-      // Regular toggle when in manual mode
+      // tombol saat dalam mode manual
       toggleDarkMode();
     }
   };
